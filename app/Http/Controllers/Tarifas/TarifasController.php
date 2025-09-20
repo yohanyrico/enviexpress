@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Tarifa;
 use Illuminate\Http\Request;
 use function PHPUnit\Framework\returnArgument;
+use App\Http\Requests\StoreTarifasRequest;
+use App\Http\Requests\UpdateTarifasRequest;
 
 class TarifasController extends Controller
 {

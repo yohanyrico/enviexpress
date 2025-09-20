@@ -8,6 +8,14 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+                    <div style="padding:16px">
+                    <p>
+                        <a href="{{ route('tarifas.create') }}">Nuevo</a>
+                    </p>
+                    @if (session('ok'))
+                        <p style="color:green">{{ session('ok') }}</p>
+                    @endif
+
                     <table id="tarifas" class="display" style="width:100%"> 
                         <thead>
                             <tr>
@@ -41,6 +49,17 @@
                             <td>{{ $tar->tiempo_entrega_horas }}</td>
                             <td>{{ $tar->vigencia_desde }}</td>
                             <td>{{ $tar->vigencia_hasta }}</td>
+                            <td>
+        <a href="{{ route('tarifas.edit', $tar) }}">Editar</a>
+
+        <form action="{{ route('tarifas.destroy', $tar) }}" method="POST"
+              style="display:inline" onsubmit="return confirm('¿Eliminar?')">
+            @csrf
+            @method('DELETE')
+            <button type="submit">Eliminar</button>
+        </form>
+    </td>
+
                             </tr>
                         @endforeach
                     </tbody>
