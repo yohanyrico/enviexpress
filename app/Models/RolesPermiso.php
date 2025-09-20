@@ -11,19 +11,18 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class RolesPermiso
  * 
- * @property int $id_rol_permiso
- * @property int $id_rol
- * @property int $id_permiso
+ * @property int $id
+ * @property int|null $id_rol
+ * @property int|null $id_permiso
  * 
- * @property Permiso $permiso
- * @property Role $role
+ * @property Role|null $role
+ * @property Permiso|null $permiso
  *
  * @package App\Models
  */
 class RolesPermiso extends Model
 {
 	protected $table = 'roles_permisos';
-	protected $primaryKey = 'id_rol_permiso';
 	public $timestamps = false;
 
 	protected $casts = [
@@ -36,13 +35,13 @@ class RolesPermiso extends Model
 		'id_permiso'
 	];
 
-	public function permiso()
-	{
-		return $this->belongsTo(Permiso::class, 'id_permiso');
-	}
-
 	public function role()
 	{
 		return $this->belongsTo(Role::class, 'id_rol');
+	}
+
+	public function permiso()
+	{
+		return $this->belongsTo(Permiso::class, 'id_permiso');
 	}
 }

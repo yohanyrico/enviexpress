@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class Persona
  * 
- * @property int $id_persona
+ * @property int $id
  * @property string|null $nombres
  * @property string|null $apellidos
  * @property string|null $documento_tipo
@@ -32,7 +32,6 @@ use Illuminate\Database\Eloquent\Model;
 class Persona extends Model
 {
 	protected $table = 'personas';
-	protected $primaryKey = 'id_persona';
 	public $timestamps = false;
 
 	protected $casts = [
@@ -62,7 +61,7 @@ class Persona extends Model
 
 	public function guias()
 	{
-		return $this->hasMany(Guia::class, 'id_remitente');
+		return $this->hasMany(Guia::class, 'id_destinatario');
 	}
 
 	public function usuarios()

@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class Asignacione
  * 
- * @property int $id_asignacion
+ * @property int $id
  * @property int|null $id_guia
  * @property int|null $id_vehiculo
  * @property int|null $id_empleado
@@ -20,16 +20,15 @@ use Illuminate\Database\Eloquent\Model;
  * @property string|null $estado_asignacion
  * @property string|null $observaciones
  * 
- * @property Empleado|null $empleado
  * @property Guia|null $guia
  * @property Vehiculo|null $vehiculo
+ * @property Empleado|null $empleado
  *
  * @package App\Models
  */
 class Asignacione extends Model
 {
 	protected $table = 'asignaciones';
-	protected $primaryKey = 'id_asignacion';
 	public $timestamps = false;
 
 	protected $casts = [
@@ -48,11 +47,6 @@ class Asignacione extends Model
 		'observaciones'
 	];
 
-	public function empleado()
-	{
-		return $this->belongsTo(Empleado::class, 'id_empleado');
-	}
-
 	public function guia()
 	{
 		return $this->belongsTo(Guia::class, 'id_guia');
@@ -61,5 +55,10 @@ class Asignacione extends Model
 	public function vehiculo()
 	{
 		return $this->belongsTo(Vehiculo::class, 'id_vehiculo');
+	}
+
+	public function empleado()
+	{
+		return $this->belongsTo(Empleado::class, 'id_empleado');
 	}
 }

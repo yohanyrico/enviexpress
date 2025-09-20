@@ -13,7 +13,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class Guia
  * 
- * @property int $id_guia
+ * @property int $id
  * @property string|null $numero_guia
  * @property string|null $qr_code
  * @property string|null $tipo_servicio
@@ -36,7 +36,6 @@ use Illuminate\Database\Eloquent\Model;
 class Guia extends Model
 {
 	protected $table = 'guias';
-	protected $primaryKey = 'id_guia';
 	public $timestamps = false;
 
 	protected $casts = [
@@ -62,7 +61,7 @@ class Guia extends Model
 
 	public function persona()
 	{
-		return $this->belongsTo(Persona::class, 'id_remitente');
+		return $this->belongsTo(Persona::class, 'id_destinatario');
 	}
 
 	public function asignaciones()

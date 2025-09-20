@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class Tarifa
  * 
- * @property int $id_tarifa
+ * @property int $id
  * @property string|null $nombre_tarifa
  * @property int|null $ubicacion_origen
  * @property int|null $ubicacion_destino
@@ -32,7 +32,6 @@ use Illuminate\Database\Eloquent\Model;
 class Tarifa extends Model
 {
 	protected $table = 'tarifas';
-	protected $primaryKey = 'id_tarifa';
 	public $timestamps = false;
 
 	protected $casts = [
@@ -63,6 +62,6 @@ class Tarifa extends Model
 
 	public function ubicacion()
 	{
-		return $this->belongsTo(Ubicacion::class, 'ubicacion_origen');
+		return $this->belongsTo(Ubicacion::class, 'ubicacion_destino');
 	}
 }

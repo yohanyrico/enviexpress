@@ -14,6 +14,7 @@ use Illuminate\Database\Eloquent\Model;
  * 
  * @property int $id_permiso
  * @property string $nombre_permiso
+ * @property string|null $descripcion
  * 
  * @property Collection|Role[] $roles
  *
@@ -26,12 +27,13 @@ class Permiso extends Model
 	public $timestamps = false;
 
 	protected $fillable = [
-		'nombre_permiso'
+		'nombre_permiso',
+		'descripcion'
 	];
 
 	public function roles()
 	{
 		return $this->belongsToMany(Role::class, 'roles_permisos', 'id_permiso', 'id_rol')
-					->withPivot('id_rol_permiso');
+					->withPivot('id');
 	}
 }
