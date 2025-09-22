@@ -1,48 +1,70 @@
-<x-guest-layout>
-    <x-authentication-card>
-        <x-slot name="logo">
-            <x-authentication-card-logo />
-        </x-slot>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar sesión</title>
+  <!-- ✅ Tailwind desde CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans antialiased min-h-screen bg-cover bg-center flex items-center justify-center"
+      style="background-image: url('images/fondo-welcome.png');">
 
-        <x-validation-errors class="mb-4" />
+  <!-- Contenedor principal -->
+  <div class="bg-white rounded-xl shadow-lg w-[380px] min-h-[460px] flex flex-col p-6">
 
-        @session('status')
-            <div class="mb-4 font-medium text-sm text-green-600">
-                {{ $value }}
-            </div>
-        @endsession
+   <div class="flex justify-center mb-4">
+      <img src="images/envi.png" alt="Logo" class="w-24 h-auto">
+    </div>
 
-        <form method="POST" action="{{ route('login') }}">
-            @csrf
+    <!-- Título -->
+    <h1 class="text-green-600 text-xl font-semibold text-center mb-6">
+      Iniciar sesión
+    </h1>
 
-            <div>
-                <x-label for="email" value="{{ __('Email') }}" />
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
-            </div>
+    <!-- Errores de validación (opcional) -->
+    <div id="errors" class="mb-4 text-red-600 text-sm hidden">
+      <!-- Aquí puedes mostrar errores si usas JS -->
+    </div>
 
-            <div class="mt-4">
-                <x-label for="password" value="{{ __('Password') }}" />
-                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
-            </div>
+    <!-- Formulario -->
+    <form method="POST" action="/login">
+      <div class="mb-4">
+        <label for="email" class="block text-base font-medium text-gray-700 mb-1">
+          Correo electrónico
+        </label>
+        <input id="email" name="email" type="email" required
+               class="w-full border-2 border-green-500 focus:border-green-600 focus:ring-green-600 rounded-md p-2">
+      </div>
 
-            <div class="block mt-4">
-                <label for="remember_me" class="flex items-center">
-                    <x-checkbox id="remember_me" name="remember" />
-                    <span class="ms-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                </label>
-            </div>
+      <div class="mb-4">
+        <label for="password" class="block text-base font-medium text-gray-700 mb-1">
+          Contraseña
+        </label>
+        <input id="password" name="password" type="password" required
+               class="w-full border-2 border-green-500 focus:border-green-600 focus:ring-green-600 rounded-md p-2">
+      </div>
 
-            <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
-                @endif
+      <div class="flex items-center mb-4">
+        <input id="remember" name="remember" type="checkbox"
+               class="h-4 w-4 text-green-600 border-gray-300 rounded">
+        <label for="remember" class="ml-2 text-sm text-gray-700">
+          Recuérdame
+        </label>
+      </div>
 
-                <x-button class="ms-4">
-                    {{ __('Log in') }}
-                </x-button>
-            </div>
-        </form>
-    </x-authentication-card>
-</x-guest-layout>
+      <a href="/password-reset"
+         class="text-green-600 hover:underline text-sm block mb-4">
+         ¿Olvidaste tu contraseña?
+      </a>
+
+      <button type="submit"
+              class="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-2 rounded-md">
+        Entrar
+      </button>
+    </form>
+
+  </div>
+
+</body>
+</html>

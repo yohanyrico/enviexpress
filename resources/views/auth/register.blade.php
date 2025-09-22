@@ -1,60 +1,122 @@
-<x-guest-layout>
-    <x-authentication-card>
-        <x-slot name="logo">
-            <x-authentication-card-logo />
-        </x-slot>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario de Registro</title>
+  <!-- ✅ Tailwind desde CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans antialiased min-h-screen bg-cover bg-center flex items-center justify-center"
+      style="background-image: url('images/fondo-welcome.png');">
 
-        <x-validation-errors class="mb-4" />
+  <!-- Contenedor principal -->
+  <div class="bg-white rounded-xl shadow-lg w-[380px] min-h-[600px] flex flex-col p-6">
 
-        <form method="POST" action="{{ route('register') }}">
-            @csrf
+    <!-- Logo -->
+    <div class="flex justify-center mb-4">
+      <img src="images/envi.png" alt="Logo" class="w-24 h-auto">
+    </div>
 
-            <div>
-                <x-label for="name" value="{{ __('Name') }}" />
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            </div>
+    <!-- Título -->
+    <h1 class="text-green-600 text-xl font-semibold text-center mb-6">
+      Formulario de Registro
+    </h1>
 
-            <div class="mt-4">
-                <x-label for="email" value="{{ __('Email') }}" />
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
-            </div>
+    <!-- Errores de validación (opcional) -->
+    <div id="errors" class="mb-4 text-red-600 text-sm hidden">
+      <!-- Aquí puedes mostrar errores con JS -->
+    </div>
 
-            <div class="mt-4">
-                <x-label for="password" value="{{ __('Password') }}" />
-                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
-            </div>
+    <!-- Formulario -->
+    <form method="POST" action="/registro">
 
-            <div class="mt-4">
-                <x-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
-                <x-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
-            </div>
+      <!-- Nombre -->
+      <div class="mb-4">
+        <label for="nombre" class="block text-base font-medium text-gray-700 mb-1">
+          Nombre
+        </label>
+        <input id="nombre" name="nombre" type="text" required
+               class="w-full border-2 border-green-500 focus:border-green-600 focus:ring-green-600 rounded-md p-2">
+      </div>
 
-            @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
-                <div class="mt-4">
-                    <x-label for="terms">
-                        <div class="flex items-center">
-                            <x-checkbox name="terms" id="terms" required />
+      <!-- Apellido -->
+      <div class="mb-4">
+        <label for="apellido" class="block text-base font-medium text-gray-700 mb-1">
+          Apellido
+        </label>
+        <input id="apellido" name="apellido" type="text" required
+               class="w-full border-2 border-green-500 focus:border-green-600 focus:ring-green-600 rounded-md p-2">
+      </div>
 
-                            <div class="ms-2">
-                                {!! __('I agree to the :terms_of_service and :privacy_policy', [
-                                        'terms_of_service' => '<a target="_blank" href="'.route('terms.show').'" class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">'.__('Terms of Service').'</a>',
-                                        'privacy_policy' => '<a target="_blank" href="'.route('policy.show').'" class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">'.__('Privacy Policy').'</a>',
-                                ]) !!}
-                            </div>
-                        </div>
-                    </x-label>
-                </div>
-            @endif
+      <!-- Teléfono -->
+      <div class="mb-4">
+        <label for="telefono" class="block text-base font-medium text-gray-700 mb-1">
+          Teléfono
+        </label>
+        <input id="telefono" name="telefono" type="tel" required
+               class="w-full border-2 border-green-500 focus:border-green-600 focus:ring-green-600 rounded-md p-2">
+      </div>
 
-            <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
-                </a>
+      <!-- Nombre de empresa -->
+      <div class="mb-4">
+        <label for="empresa" class="block text-base font-medium text-gray-700 mb-1">
+          Nombre de empresa
+        </label>
+        <input id="empresa" name="empresa" type="text" required
+               class="w-full border-2 border-green-500 focus:border-green-600 focus:ring-green-600 rounded-md p-2">
+      </div>
 
-                <x-button class="ms-4">
-                    {{ __('Register') }}
-                </x-button>
-            </div>
-        </form>
-    </x-authentication-card>
-</x-guest-layout>
+      <!-- Dirección -->
+      <div class="mb-4">
+        <label for="direccion" class="block text-base font-medium text-gray-700 mb-1">
+          Dirección
+        </label>
+        <input id="direccion" name="direccion" type="text" required
+               class="w-full border-2 border-green-500 focus:border-green-600 focus:ring-green-600 rounded-md p-2">
+      </div>
+
+      <!-- Correo electrónico -->
+      <div class="mb-4">
+        <label for="email" class="block text-base font-medium text-gray-700 mb-1">
+          Correo electrónico
+        </label>
+        <input id="email" name="email" type="email" required
+               class="w-full border-2 border-green-500 focus:border-green-600 focus:ring-green-600 rounded-md p-2">
+      </div>
+
+      <!-- Contraseña -->
+      <div class="mb-4">
+        <label for="password" class="block text-base font-medium text-gray-700 mb-1">
+          Contraseña
+        </label>
+        <input id="password" name="password" type="password" required
+               class="w-full border-2 border-green-500 focus:border-green-600 focus:ring-green-600 rounded-md p-2">
+      </div>
+
+      <!-- Recuérdame -->
+      <div class="flex items-center mb-4">
+        <input id="remember" name="remember" type="checkbox"
+               class="h-4 w-4 text-green-600 border-gray-300 rounded">
+        <label for="remember" class="ml-2 text-sm text-gray-700">
+          Recuérdame
+        </label>
+      </div>
+
+      <!-- Enlace para recuperar contraseña -->
+      <a href="/recuperar-contraseña"
+         class="text-green-600 hover:underline text-sm block mb-4">
+         ¿Olvidaste tu contraseña?
+      </a>
+
+      <!-- Botón de envío -->
+      <button type="submit"
+              class="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-2 rounded-md">
+        Registrarse
+      </button>
+    </form>
+
+  </div>
+
+</body>
+</html>
