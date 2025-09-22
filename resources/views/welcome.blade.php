@@ -60,22 +60,13 @@
                     <main class="mt-6">
                         <div class="grid gap-6 lg:grid-cols-2 lg:gap-8">
                             <a
-                                href="https://laravel.com/docs"
-                                id="docs-card"
                                 class="flex flex-col items-start gap-6 overflow-hidden rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-none focus-visible:ring-[#FF2D20] md:row-span-3 lg:p-10 lg:pb-10"
                             >
                                 <div id="screenshot-container" class="relative flex w-full flex-1 items-stretch">
-                                    <img
-                                        src="https://laravel.com/assets/img/welcome/docs-light.svg"
-                                        alt="Laravel documentation screenshot"
-                                        class="aspect-video h-full w-full flex-1 rounded-[10px] object-top object-cover drop-shadow-[0px_4px_34px_rgba(0,0,0,0.06)]"
-                                        onerror="
-                                            document.getElementById('screenshot-container').classList.add('!hidden');
-                                            document.getElementById('docs-card').classList.add('!row-span-1');
-                                            document.getElementById('docs-card-content').classList.add('!flex-row');
-                                            document.getElementById('background').classList.add('!hidden');
-                                        "
-                                    />
+                                <img src="{{ asset('images/oficina.png') }}" 
+                                    alt="EnviExpress" 
+                                    class="w-72 h-auto">
+                                    
                                     <img
                                         src="https://laravel.com/assets/img/welcome/docs-dark.svg"
                                         alt="Laravel documentation screenshot"
@@ -92,7 +83,7 @@
                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 60">
                                                 <!-- Texto completo con estilos distintos -->
                                                 <text x="0" y="40" font-family="Arial, Helvetica, sans-serif" font-size="60">
-                                                    <tspan fill="#000000">envi</tspan> <tspan fill="#3eff20">express</tspan>
+                                                    <tspan fill="#000000">envi</tspan><tspan fill="#3eff20">express</tspan>
                                                 </text>
                                                 </svg>
 
@@ -130,6 +121,9 @@
 
                                 <div class="pt-3 sm:pt-5">
                                     <h2 class="text-xl font-semibold text-black">Solicitar envios</h2>
+                                        <p class="mt-4 text-sm/relaxed">
+                                            Realiza el envío de tus paquetes en segundos.
+                                            Solo ingresa los datos de origen y destino, elige el servicio que prefieras ¡y listo! Nuestro equipo recoge tu paquete en la puerta de tu casa u oficina.
                                 </div>
 
                                 <svg class="size-6 shrink-0 self-center stroke-[#FF2D20]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/></svg>
@@ -150,6 +144,9 @@
 
                                 <div class="pt-3 sm:pt-5">
                                     <h2 class="text-xl font-semibold text-black">Consultar Guias</h2>
+                                        <p class="mt-4 text-sm/relaxed">
+                                            ¿Necesitas el número de guía o detalles de tu envío?
+                                                Aquí puedes buscar y consultar toda la información de tus envíos anteriores de forma rápida y segura.
                                 </div>
 
                                 <svg class="size-6 shrink-0 self-center stroke-[#FF2D20]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/></svg>
@@ -170,9 +167,63 @@
 
                                 <div class="pt-3 sm:pt-5">
                                     <h2 class="text-xl font-semibold text-black">Rastrear envios</h2>
+                                        <p class="mt-4 text-sm/relaxed"></p>
+                                        Sigue tu paquete en tiempo real.
+                                        Introduce el número de guía y conoce la ubicación exacta y el estado de tu envío las 24 horas del día.
                                 </div>
                             </div>
                         </div>
+                                                <!-- Contenedor horizontal para las 3 etiquetas -->
+                        <div class="flex flex-row justify-start gap-6 mt-6 lg:mt-8">
+                            <a
+                                href="#"
+                                class="flex flex-col items-start gap-4 rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-none focus-visible:ring-[#FF2D20]"
+                            >
+                                <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16">
+                                    <svg class="size-5 sm:size-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#3eff20" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10" stroke="#3eff20" fill="#000000"/>
+                                    </svg>
+                                </div>
+
+                                <div class="pt-3 sm:pt-5">
+                                    <h2 class="text-xl font-semibold text-black">Etiqueta 1</h2>
+                                    <p class="mt-2 text-sm/relaxed">Descripción breve de la primera etiqueta.</p>
+                                </div>
+                            </a>
+
+                            <a
+                                href="#"
+                                class="flex flex-col items-start gap-4 rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-none focus-visible:ring-[#FF2D20]"
+                            >
+                                <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16">
+                                    <svg class="size-5 sm:size-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#3eff20" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="3" y="3" width="18" height="18" rx="2" fill="#000000" stroke="#3eff20"/>
+                                    </svg>
+                                </div>
+
+                                <div class="pt-3 sm:pt-5">
+                                    <h2 class="text-xl font-semibold text-black">Etiqueta 2</h2>
+                                    <p class="mt-2 text-sm/relaxed">Descripción breve de la segunda etiqueta.</p>
+                                </div>
+                            </a>
+
+                            <a
+                                href="#"
+                                class="flex flex-col items-start gap-4 rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-none focus-visible:ring-[#FF2D20]"
+                            >
+                                <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16">
+                                    <svg class="size-5 sm:size-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#3eff20" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                        <polygon points="12,2 22,22 2,22" fill="#000000" stroke="#3eff20"/>
+                                    </svg>
+                                </div>
+
+                                <div class="pt-3 sm:pt-5">
+                                    <h2 class="text-xl font-semibold text-black">Etiqueta 3</h2>
+                                    <p class="mt-2 text-sm/relaxed">Descripción breve de la tercera etiqueta.</p>
+                                </div>
+                            </a>
+                        </div>
+
                     </main>
 
                     <footer class="py-16 text-center text-sm text-white">
