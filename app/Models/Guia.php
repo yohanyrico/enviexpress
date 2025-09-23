@@ -13,7 +13,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class Guia
  * 
- * @property int $id
+ * @property int $id_guia
  * @property string|null $numero_guia
  * @property string|null $qr_code
  * @property string|null $tipo_servicio
@@ -36,6 +36,7 @@ use Illuminate\Database\Eloquent\Model;
 class Guia extends Model
 {
 	protected $table = 'guias';
+	protected $primaryKey = 'id_guia';
 	public $timestamps = false;
 
 	protected $casts = [

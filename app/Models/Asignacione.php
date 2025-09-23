@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class Asignacione
  * 
- * @property int $id
+ * @property int $id_asignacion
  * @property int|null $id_guia
  * @property int|null $id_vehiculo
  * @property int|null $id_empleado
@@ -29,6 +29,7 @@ use Illuminate\Database\Eloquent\Model;
 class Asignacione extends Model
 {
 	protected $table = 'asignaciones';
+	protected $primaryKey = 'id_asignacion';
 	public $timestamps = false;
 
 	protected $casts = [

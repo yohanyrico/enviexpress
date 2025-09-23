@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class Persona
  * 
- * @property int $id
+ * @property int $id_persona
  * @property string|null $nombres
  * @property string|null $apellidos
  * @property string|null $documento_tipo
@@ -32,6 +32,7 @@ use Illuminate\Database\Eloquent\Model;
 class Persona extends Model
 {
 	protected $table = 'personas';
+	protected $primaryKey = 'id_persona';
 	public $timestamps = false;
 
 	protected $casts = [

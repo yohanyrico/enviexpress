@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class Ubicacion
  * 
- * @property int $id
+ * @property int $id_ubicacion
  * @property string|null $ciudad
  * @property string|null $departamento
  * @property string|null $pais
@@ -27,6 +27,7 @@ use Illuminate\Database\Eloquent\Model;
 class Ubicacion extends Model
 {
 	protected $table = 'ubicacion';
+	protected $primaryKey = 'id_ubicacion';
 	public $timestamps = false;
 
 	protected $casts = [
@@ -49,6 +50,6 @@ class Ubicacion extends Model
 
 	public function tarifas()
 	{
-		return $this->hasMany(Tarifa::class, 'ubicacion_destino');
+		return $this->hasMany(Tarifa::class, 'id_ubicacion_destino');
 	}
 }

@@ -13,7 +13,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class Vehiculo
  * 
- * @property int $id
+ * @property int $id_vehiculo
  * @property string|null $codigo_vehiculo
  * @property string|null $tipo_vehiculo
  * @property string|null $marca
@@ -32,6 +32,7 @@ use Illuminate\Database\Eloquent\Model;
 class Vehiculo extends Model
 {
 	protected $table = 'vehiculos';
+	protected $primaryKey = 'id_vehiculo';
 	public $timestamps = false;
 
 	protected $casts = [

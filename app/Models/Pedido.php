@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class Pedido
  * 
- * @property int $id
+ * @property int $id_pedido
  * @property int|null $id_guia
  * @property string|null $tipo_pedido
  * @property string|null $descripcion_pedido
@@ -28,6 +28,7 @@ use Illuminate\Database\Eloquent\Model;
 class Pedido extends Model
 {
 	protected $table = 'pedidos';
+	protected $primaryKey = 'id_pedido';
 	public $timestamps = false;
 
 	protected $casts = [

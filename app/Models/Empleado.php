@@ -13,7 +13,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class Empleado
  * 
- * @property int $id
+ * @property int $id_empleado
  * @property int|null $id_persona
  * @property string|null $codigo_empleado
  * @property string|null $cargo
@@ -29,6 +29,7 @@ use Illuminate\Database\Eloquent\Model;
 class Empleado extends Model
 {
 	protected $table = 'empleados';
+	protected $primaryKey = 'id_empleado';
 	public $timestamps = false;
 
 	protected $casts = [

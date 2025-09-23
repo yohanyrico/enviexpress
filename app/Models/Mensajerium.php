@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class Mensajerium
  * 
- * @property int $id
+ * @property int $id_mensajeria
  * @property int|null $id_guia
  * @property string|null $tipo_documento
  * @property string|null $codigo_mensaje
@@ -27,6 +27,7 @@ use Illuminate\Database\Eloquent\Model;
 class Mensajerium extends Model
 {
 	protected $table = 'mensajeria';
+	protected $primaryKey = 'id_mensajeria';
 	public $timestamps = false;
 
 	protected $casts = [

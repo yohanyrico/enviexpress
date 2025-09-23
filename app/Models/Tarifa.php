@@ -12,10 +12,10 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class Tarifa
  * 
- * @property int $id
+ * @property int $id_tarifa
  * @property string|null $nombre_tarifa
- * @property int|null $ubicacion_origen
- * @property int|null $ubicacion_destino
+ * @property int|null $id_ubicacion_origen
+ * @property int|null $id_ubicacion_destino
  * @property string|null $tipo_servicio
  * @property float|null $peso_minimo_kg
  * @property float|null $peso_maximo_kg
@@ -32,11 +32,12 @@ use Illuminate\Database\Eloquent\Model;
 class Tarifa extends Model
 {
 	protected $table = 'tarifas';
+	protected $primaryKey = 'id_tarifa';
 	public $timestamps = false;
 
 	protected $casts = [
-		'ubicacion_origen' => 'int',
-		'ubicacion_destino' => 'int',
+		'id_ubicacion_origen' => 'int',
+		'id_ubicacion_destino' => 'int',
 		'peso_minimo_kg' => 'float',
 		'peso_maximo_kg' => 'float',
 		'tarifa_base' => 'float',
@@ -48,8 +49,8 @@ class Tarifa extends Model
 
 	protected $fillable = [
 		'nombre_tarifa',
-		'ubicacion_origen',
-		'ubicacion_destino',
+		'id_ubicacion_origen',
+		'id_ubicacion_destino',
 		'tipo_servicio',
 		'peso_minimo_kg',
 		'peso_maximo_kg',
@@ -62,6 +63,6 @@ class Tarifa extends Model
 
 	public function ubicacion()
 	{
-		return $this->belongsTo(Ubicacion::class, 'ubicacion_destino');
+		return $this->belongsTo(Ubicacion::class, 'id_ubicacion_destino');
 	}
 }

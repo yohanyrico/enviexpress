@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class Seguimiento
  * 
- * @property int $id
+ * @property int $id_seguimiento
  * @property int|null $id_guia
  * @property Carbon|null $fecha_evento
  * @property string|null $ubicacion_actual
@@ -29,6 +29,7 @@ use Illuminate\Database\Eloquent\Model;
 class Seguimiento extends Model
 {
 	protected $table = 'seguimiento';
+	protected $primaryKey = 'id_seguimiento';
 	public $timestamps = false;
 
 	protected $casts = [
