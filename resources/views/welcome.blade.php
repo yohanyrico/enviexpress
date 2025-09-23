@@ -38,6 +38,12 @@
                                     </a>
                                 @else
                                     <a
+                                        href="{{ route('nosotros') }}"
+                                        class="rounded-md px-3 py-2 text-white ring-1 ring-transparent transition hover:text-white/70 focus:outline-none focus-visible:ring-[#FF2D20]"
+                                    >
+                                        Nosotros
+                                    </a>
+                                    <a
                                         href="{{ route('login') }}"
                                         class="rounded-md px-3 py-2 text-white ring-1 ring-transparent transition hover:text-white/70 focus:outline-none focus-visible:ring-[#FF2D20]"
                                     >
@@ -60,7 +66,7 @@
                     <main class="mt-6">
                         <div class="grid gap-6 lg:grid-cols-2 lg:gap-8">
                             <a
-                                class="flex flex-col items-start gap-6 overflow-hidden rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-none focus-visible:ring-[#FF2D20] md:row-span-3 lg:p-10 lg:pb-10"
+                                class="flex flex-col items-start gap-6 overflow-hidden rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 text-black focus:outline-none focus-visible:ring-[#FF2D20] md:row-span-3 lg:p-10 lg:pb-10"
                             >
                                 <div id="screenshot-container" class="relative flex w-full flex-1 items-stretch">
                                 <img src="{{ asset('images/oficina.png') }}" 
@@ -97,13 +103,12 @@
                                         </div>
                                     </div>
 
-                                    <svg class="size-6 shrink-0 stroke-[#FF2D20]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/></svg>
                                 </div>
                             </a>
 
                             <a
-                                href="https://laracasts.com"
-                                class="flex items-start gap-4 rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-none focus-visible:ring-[#FF2D20] lg:pb-10"
+                                href="{{ route('login') }}"
+                                class="flex items-start gap-4 rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 text-black focus:outline-none focus-visible:ring-[#FF2D20] lg:pb-10"
                             >
                                 <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16">
                                     <svg class="size-5 sm:size-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#3eff20" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -126,12 +131,11 @@
                                             Solo ingresa los datos de origen y destino, elige el servicio que prefieras ¡y listo! Nuestro equipo recoge tu paquete en la puerta de tu casa u oficina.
                                 </div>
 
-                                <svg class="size-6 shrink-0 self-center stroke-[#FF2D20]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/></svg>
                             </a>
 
                             <a
-                                href="https://laravel-news.com"
-                                class="flex items-start gap-4 rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-none focus-visible:ring-[#FF2D20] lg:pb-10"
+                                href="{{ route('guias') }}"
+                                class="flex items-start gap-4 rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 text-black focus:outline-none focus-visible:ring-[#FF2D20] lg:pb-10"
                             >
                                 <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16">
                                         <svg class="size-5 sm:size-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#3eff20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -149,77 +153,101 @@
                                                 Aquí puedes buscar y consultar toda la información de tus envíos anteriores de forma rápida y segura.
                                 </div>
 
-                                <svg class="size-6 shrink-0 self-center stroke-[#FF2D20]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/></svg>
+                            
                             </a>
 
-                            <div class="flex items-start gap-4 rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] lg:pb-10">
-                                <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16">
-                                    <svg class="size-5 sm:size-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#3eff20" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                                        <!-- Forma del pin/mapa -->
-                                        <path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/>
-                                        <!-- Círculo interior -->
-                                        <circle cx="12" cy="9" r="2.5" fill="#000000" stroke="#000000"/>
-                                        <!-- Línea de suelo para dar efecto de mapa -->
-                                        <path d="M2 22h20" stroke="#3eff20"/>
-                                        </svg>
+                            <a
+                                href="{{ route('guias') }}"
+                                class="flex items-start gap-4 rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 text-black focus:outline-none focus-visible:ring-[#FF2D20] lg:pb-10"
+                            >
+                        
+                                <div class="flex items-start gap-4 rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] lg:pb-10">
+                                    <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16">
+                                        <svg class="size-5 sm:size-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#3eff20" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                            <!-- Forma del pin/mapa -->
+                                            <path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/>
+                                            <!-- Círculo interior -->
+                                            <circle cx="12" cy="9" r="2.5" fill="#000000" stroke="#000000"/>
+                                            <!-- Línea de suelo para dar efecto de mapa -->
+                                            <path d="M2 22h20" stroke="#3eff20"/>
+                                            </svg>
 
-                                </div>
+                                    </div>
 
-                                <div class="pt-3 sm:pt-5">
-                                    <h2 class="text-xl font-semibold text-black">Rastrear envios</h2>
-                                        <p class="mt-4 text-sm/relaxed"></p>
-                                        Sigue tu paquete en tiempo real.
-                                        Introduce el número de guía y conoce la ubicación exacta y el estado de tu envío las 24 horas del día.
+                                    <div class="pt-3 sm:pt-5">
+                                        <h2 class="text-xl font-semibold text-black">Rastrear envios</h2>
+                                            <p class="mt-4 text-sm/relaxed"></p>
+                                            Sigue tu paquete en tiempo real.
+                                            Introduce el número de guía y conoce la ubicación exacta y el estado de tu envío las 24 horas del día.
+                                    </div>
                                 </div>
-                            </div>
+                                </a>
                         </div>
                                                 <!-- Contenedor horizontal para las 3 etiquetas -->
                         <div class="flex flex-row justify-start gap-6 mt-6 lg:mt-8">
                             <a
                                 href="#"
-                                class="flex flex-col items-start gap-4 rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-none focus-visible:ring-[#FF2D20]"
+                                class="flex flex-col items-start gap-4 rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 text-black focus:outline-none focus-visible:ring-[#FF2D20]"
                             >
                                 <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16">
-                                    <svg class="size-5 sm:size-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#3eff20" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                                        <circle cx="12" cy="12" r="10" stroke="#3eff20" fill="#000000"/>
+                                    <svg class="size-6 sm:size-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#3eff20" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                        <!-- Cuerpo del camión -->
+                                        <rect x="2" y="7" width="13" height="10" rx="2" ry="2" fill="#60bd4fb7" stroke="#05fa16ff"/>
+                                        <!-- Cabina frontal -->
+                                        <path d="M15 10h4l3 3v4h-7v-7z" fill="#35d240ff" stroke="#00ff1eff"/>
+                                        <!-- Ruedas -->
+                                        <circle cx="7" cy="17" r="2" fill="#000000" stroke="#0c0c0cff"/>
+                                        <circle cx="17" cy="17" r="2" fill="#000000" stroke="#0c0c0cff"/>
+                                        <!-- Línea del suelo del camión -->
+                                        <path d="M2 17h3" stroke="#060606ff"/>
                                     </svg>
                                 </div>
 
                                 <div class="pt-3 sm:pt-5">
-                                    <h2 class="text-xl font-semibold text-black">Etiqueta 1</h2>
-                                    <p class="mt-2 text-sm/relaxed">Descripción breve de la primera etiqueta.</p>
+                                    <h2 class="text-xl font-semibold text-black">Mensajería Express</h2>
+                                    <p class="mt-2 text-sm/relaxed">Entregas rápidas en menos de 2 horas en toda Bogotá con seguimiento en tiempo real y notificaciones instantáneas</p>
                                 </div>
                             </a>
 
                             <a
                                 href="#"
-                                class="flex flex-col items-start gap-4 rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-none focus-visible:ring-[#FF2D20]"
+                                class="flex flex-col items-start gap-4 rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 text-black focus:outline-none focus-visible:ring-[#FF2D20]"
                             >
                                 <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16">
-                                    <svg class="size-5 sm:size-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#3eff20" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                                        <rect x="3" y="3" width="18" height="18" rx="2" fill="#000000" stroke="#3eff20"/>
-                                    </svg>
+                                <svg class="size-6 sm:size-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#3eff20" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <!-- Caja de mensajería -->
+                                    <!-- Parte superior de la caja -->
+                                    <path d="M3 7L12 2l9 5-9 5-9-5z" fill="#8d5832ff" stroke="#080808ff"/>
+                                    <!-- Lados de la caja -->
+                                    <path d="M3 7v10l9 5 9-5V7" fill="#8d5832ff" stroke="#111111ff"/>
+                                    <!-- Línea central simulando el cierre de la caja -->
+                                    <path d="M12 12v10" stroke="#141414ff"/>
+                                </svg>
+
                                 </div>
 
                                 <div class="pt-3 sm:pt-5">
-                                    <h2 class="text-xl font-semibold text-black">Etiqueta 2</h2>
-                                    <p class="mt-2 text-sm/relaxed">Descripción breve de la segunda etiqueta.</p>
+                                    <h2 class="text-xl font-semibold text-black">Paquetería Segura</h2>
+                                    <p class="mt-2 text-sm/relaxed">Envío seguro de paquetes y documentos importantes con garantía total y seguro incluido contra pérdidas</p>
                                 </div>
                             </a>
 
                             <a
                                 href="#"
-                                class="flex flex-col items-start gap-4 rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-none focus-visible:ring-[#FF2D20]"
+                                class="flex flex-col items-start gap-4 rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 text-black focus:outline-none focus-visible:ring-[#FF2D20]"
                             >
                                 <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16">
-                                    <svg class="size-5 sm:size-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#3eff20" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                                        <polygon points="12,2 22,22 2,22" fill="#000000" stroke="#3eff20"/>
+                                    <svg class="size-6 sm:size-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#3eff20" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                        <!-- Cuerpo del candado -->
+                                        <rect x="4" y="11" width="16" height="10" rx="2" ry="2" fill="#f36f0aff" stroke="#e0fc07ff"/>
+                                        <!-- Arco del candado -->
+                                        <path d="M7 11V7a5 5 0 0 1 10 0v4" fill="none" stroke="#616461ff"/>
                                     </svg>
                                 </div>
 
                                 <div class="pt-3 sm:pt-5">
-                                    <h2 class="text-xl font-semibold text-black">Etiqueta 3</h2>
-                                    <p class="mt-2 text-sm/relaxed">Descripción breve de la tercera etiqueta.</p>
+                                    <h2 class="text-xl font-semibold text-black">Seguridad Garantizada</h2>
+                                    <p class="mt-2 text-sm/relaxed">Seguimiento GPS en tiempo real, fotografía de entrega y garantía de entrega 100% confiable con firma digital</p>
                                 </div>
                             </a>
                         </div>
