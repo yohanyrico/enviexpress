@@ -25,7 +25,7 @@ class TarifasController extends Controller
      */
     public function create()
     {
-        //
+         return view('tarifas.create');
     }
 
     /**

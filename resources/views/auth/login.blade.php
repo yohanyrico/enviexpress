@@ -29,6 +29,7 @@
 
     <!-- Formulario -->
     <form method="POST" action="/login">
+      @csrf
       <div class="mb-4">
         <label for="email" class="block text-base font-medium text-gray-700 mb-1">
           Correo electrónico

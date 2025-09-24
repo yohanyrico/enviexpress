@@ -2,17 +2,27 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Tarifas\TarifasController;
+use Illuminate\Http\Request;
 
+Route::post('/registro', function (Request $request) {
+    // Aquí procesas y guardas los datos del formulario
+    // Ejemplo: User::create([...]);
+
+    // Después de guardar, redirige al dashboard
+    return redirect('/dashboard');
+});
+
+Route::get('/tarifas/create', [TarifasController::class, 'create'])->name('tarifas.create');
 Route::get('/', function () {
     return view('welcome');
 });
 
 Route::get('/guias', function () {
-    return view('auth.guias');   // nombre del archivo: resources/views/guias.blade.php
+    return view('auth.guias'); 
 })->name('guias');
 
 Route::get('/nosotros', function () {
-    return view('nosotros'); // Asumiendo que tienes una vista llamada "nosotros.blade.php"
+    return view('nosotros'); 
 })->name('nosotros');
 
 
@@ -30,3 +40,4 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
