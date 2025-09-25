@@ -17,7 +17,7 @@
     </div>
 
     <!-- Título -->
-    <h1 class="text-green-600 text-xl font-semibold text-center mb-6">
+    <h1 class="text-black-600 text-xl font-semibold text-center mb-6">
       Formulario de Registro
     </h1>
 
@@ -91,22 +91,9 @@
                  class="w-full border-2 border-green-500 focus:border-green-600 focus:ring-green-600 rounded-md p-2">
         </div>
 
-        {{-- Recuérdame --}}
-        <div class="flex items-center mb-4">
-          <input id="remember" name="remember" type="checkbox"
-                 class="h-4 w-4 text-green-600 border-gray-300 rounded">
-          <label for="remember" class="ml-2 text-sm text-gray-700">Recuérdame</label>
-        </div>
-
-        {{-- Link para recuperar contraseña --}}
-        <a href="{{ route('password.request') }}"
-           class="text-green-600 hover:underline text-sm block mb-4">
-           ¿Olvidaste tu contraseña?
-        </a>
-
         {{-- Botón de envío --}}
         <button type="submit"
-                class="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-2 rounded-md">
+                class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2 rounded-md">
           Registrarse
         </button>
     </form>

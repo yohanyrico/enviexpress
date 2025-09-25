@@ -61,7 +61,7 @@ body {
 
 /* Botón */
 .btn {
-    background: #dc3545;
+    background: #e27b04;
     color: #ffffff;
     width: 100%;
     padding: 0.9rem;
@@ -73,7 +73,7 @@ body {
     transition: background 0.3s;
 }
 .btn:hover {
-    background: #b02a37;
+    background: #fc8f00;
 }
 
 /* Resultado de la guía */

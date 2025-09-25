@@ -18,7 +18,7 @@
     </div>
 
     <!-- Título -->
-    <h1 class="text-green-600 text-xl font-semibold text-center mb-6">
+    <h1 class="text-black-600 text-xl font-semibold text-center mb-6">
       Iniciar sesión
     </h1>
 
@@ -28,7 +28,7 @@
     </div>
 
     <!-- Formulario -->
-    <form method="POST" action="/login">
+    <form method="POST" action="{{ route('login') }}">
       @csrf
       <div class="mb-4">
         <label for="email" class="block text-base font-medium text-gray-700 mb-1">
@@ -55,12 +55,12 @@
       </div>
 
       <a href="/password-reset"
-         class="text-green-600 hover:underline text-sm block mb-4">
+         class="text-gray-600 hover:underline text-sm block mb-4">
          ¿Olvidaste tu contraseña?
       </a>
 
       <button type="submit"
-              class="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-2 rounded-md">
+              class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2 rounded-md">
         Entrar
       </button>
     </form>

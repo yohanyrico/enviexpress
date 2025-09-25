@@ -17,12 +17,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
 Route::get('/guias', function () {
     return view('auth.guias'); 
 })->name('guias');
 
 Route::get('/nosotros', function () {
-    return view('nosotros'); 
+    return view('auth.nosotros'); 
 })->name('nosotros');
 
 
