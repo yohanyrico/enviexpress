@@ -33,7 +33,27 @@ class TarifasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $validated = $request->validate([
+            'nombre_tarifa'        => 'required|string|max:255',
+            'ubicacion_origen'     => 'required|string|max:255',
+            'ubicacion_destino'    => 'required|string|max:255',
+            'tipo_servicio'        => 'required|string|max:255',
+            'peso_minimo_kg'       => 'required|numeric|min:0',
+            'peso_maximo_kg'       => 'required|numeric|min:0',
+            'tarifa_base'          => 'required|numeric|min:0',
+            'tarifa_adicional_kg'  => 'required|numeric|min:0',
+            'tiempo_entrega_horas' => 'required|numeric|min:0',
+            'vigencia_desde'       => 'required|date',
+            'vigencia_hasta'       => 'required|date|after_or_equal:vigencia_desde',
+        ]);
+
+        // Crear registro
+        Tarifa::create($validated);
+
+        // Redirigir con mensaje de éxito
+        return redirect()
+            ->route('tarifas.index')
+            ->with('ok', 'Tarifa creada correctamente.');
     }
 
     /**
@@ -49,7 +69,7 @@ class TarifasController extends Controller
      */
     public function edit(Tarifa $tarifa)
     {
-        //
+        return view('tarifas.edit', compact('tarifa'));
     }
 
     /**
@@ -57,7 +77,24 @@ class TarifasController extends Controller
      */
     public function update(Request $request, Tarifa $tarifa)
     {
-        //
+         $validated = $request->validate([
+        'nombre_tarifa' => 'required|string|max:255',
+        'ubicacion_origen' => 'required|string|max:255',
+        'ubicacion_destino' => 'required|string|max:255',
+        'tipo_servicio' => 'required|string|max:255',
+        'peso_minimo_kg' => 'required|numeric',
+        'peso_maximo_kg' => 'required|numeric',
+        'tarifa_base' => 'required|numeric',
+        'tarifa_adicional_kg' => 'required|numeric',
+        'tiempo_entrega_horas' => 'required|numeric',
+        'vigencia_desde' => 'required|date',
+        'vigencia_hasta' => 'required|date',
+    ]);
+
+    $tarifa->update($validated);
+
+    return redirect()->route('tarifas.index')
+                     ->with('ok', 'Tarifa actualizada correctamente.');
     }
 
     /**
@@ -65,6 +102,10 @@ class TarifasController extends Controller
      */
     public function destroy(Tarifa $tarifa)
     {
-        //
+        $tarifa->delete();
+
+        return redirect()
+            ->route('tarifas.index')
+            ->with('ok', 'Tarifa eliminada correctamente.');
     }
 }

@@ -10,7 +10,12 @@
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                     <div style="padding:16px">
                     <p>
-                        <a href="{{ route('tarifas.create') }}">Nuevo</a>
+                        <a href="{{ route('tarifas.create') }}"
+                            class="inline-block px-4 py-2 bg-green-600 text-white rounded-md 
+                                hover:bg-green-700 focus:outline-none focus:ring-2 
+                                focus:ring-green-400">
+                            Nuevo
+                        </a>
                     </p>
                     @if (session('ok'))
                         <p style="color:green">{{ session('ok') }}</p>
@@ -31,16 +36,17 @@
                                 <th>Tiempo Entrega</th>
                                 <th>Vigencia Desde</th>
                                 <th>Vigencia Hasta</th>
+                                <th>Acciones</th>
                                 
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($tarifas as $tar)
                             <tr>
-                            <td>{{ $tar->id }}</td>
+                            <td>{{ $loop->iteration }}</td>  {{-- ← número de fila --}}
                             <td>{{ $tar->nombre_tarifa }}</td>
-                            <td>{{ $tar->ubicacion_origen }}</td>
-                            <td>{{ $tar->ubicacion_destino }}</td>
+                            <td>{{ $tar->id_ubicacion_origen }}</td>
+                            <td>{{ $tar->id_ubicacion_destino }}</td>
                             <td>{{ $tar->tipo_servicio }}</td>
                             <td>{{ $tar->peso_minimo_kg }}</td>
                             <td>{{ $tar->peso_maximo_kg }}</td>
@@ -50,15 +56,27 @@
                             <td>{{ $tar->vigencia_desde }}</td>
                             <td>{{ $tar->vigencia_hasta }}</td>
                             <td>
-        <a href="{{ route('tarifas.edit', $tar) }}">Editar</a>
+            
+                                    <a href="{{ route('tarifas.edit', $tar) }}"
+       class="inline-block px-3 py-1 bg-blue-600 text-white rounded-md 
+              hover:bg-blue-700 focus:outline-none focus:ring-2 
+              focus:ring-blue-400">
+        Editar
+    </a>
 
-        <form action="{{ route('tarifas.destroy', $tar) }}" method="POST"
-              style="display:inline" onsubmit="return confirm('¿Eliminar?')">
-            @csrf
-            @method('DELETE')
-            <button type="submit">Eliminar</button>
-        </form>
-    </td>
+    <form action="{{ route('tarifas.destroy', $tar) }}" method="POST"
+          style="display:inline"
+          onsubmit="return confirm('¿Eliminar?')">
+        @csrf
+        @method('DELETE')
+        <button type="submit"
+                class="inline-block px-3 py-1 bg-red-600 text-white rounded-md
+                       hover:bg-red-700 focus:outline-none focus:ring-2
+                       focus:ring-red-400">
+            Eliminar
+        </button>
+                                    </form>
+                                </td>
 
                             </tr>
                         @endforeach
