@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Tarifas\TarifasController;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 
 Route::post('/registro', function (Request $request) {
     // Aquí procesas y guardas los datos del formulario
@@ -11,6 +12,14 @@ Route::post('/registro', function (Request $request) {
     // Después de guardar, redirige al dashboard
     return redirect('/dashboard');
 });
+
+Route::get('/login', [AuthenticatedSessionController::class, 'create'])
+     ->name('login');
+
+Route::post('/login', [AuthenticatedSessionController::class, 'store']);
+
+Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
+     ->name('logout');
 
 Route::get('/tarifas/create', [TarifasController::class, 'create'])->name('tarifas.create');
 Route::get('/', function () {
