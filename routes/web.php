@@ -6,6 +6,7 @@ use App\Http\Controllers\Tarifa\TarifaController;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Envios\EnvioController;
+use App\Http\Controllers\Guia\GuiaController;
 
 Route::post('/registro', function (Request $request) {
 
@@ -42,6 +43,11 @@ Route::get('/nosotros', function () {
 Route::resource('tarifas', TarifaController::class)
         ->names('tarifas')
         ->parameters(['tarifas' => 'tarifa']);
+
+Route::resource('guias', GuiaController::class)
+    ->names('guias')
+    ->parameters(['guias' => 'guia']);
+
 
 Route::middleware([
     'auth:sanctum',

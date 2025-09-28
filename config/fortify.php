@@ -77,16 +77,16 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Fortify Routes Prefix / Subdomain
+    | Fortify Routes  / Subdomain
     |--------------------------------------------------------------------------
     |
-    | Here you may specify which prefix Fortify will assign to all the routes
+    | Here you may specify which  Fortify will assign to all the routes
     | that it registers with the application. If necessary, you may change
     | subdomain under which all of the Fortify routes will be available.
     |
     */
 
-    'prefix' => '',
+    '' => '',
 
     'domain' => null,
 

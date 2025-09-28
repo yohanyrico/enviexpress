@@ -20,8 +20,14 @@
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link href="{{ route('envios.index') }}" :active="request()->routeIs('tarifas.*')">
-                        {{ __('Pedidos') }}
+                    <x-nav-link href="{{ route('envios.index') }}" :active="request()->routeIs('envios.*')">
+                        {{ __('Envios') }}
+                    </x-nav-link>
+                </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link href="{{ route('guias.index') }}" :active="request()->routeIs('guias.*')">
+                        {{ __('Guias') }}
                     </x-nav-link>
                 </div>
                 
