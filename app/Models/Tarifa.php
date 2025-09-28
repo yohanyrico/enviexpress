@@ -65,4 +65,16 @@ class Tarifa extends Model
 	{
 		return $this->belongsTo(Ubicacion::class, 'id_ubicacion_destino');
 	}
+
+	public function origen()
+	{
+		return $this->belongsTo(Ubicacion::class, 'id_ubicacion_origen');
+	}
+
+	public function destino()
+	{
+		return $this->belongsTo(Ubicacion::class, 'id_ubicacion_destino');
+	}
+
 }
+

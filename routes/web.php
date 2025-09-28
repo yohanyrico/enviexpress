@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Tarifas\TarifasController;
+use App\Http\Controllers\Tarifa\TarifaController;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 
@@ -21,10 +21,6 @@ Route::post('/login', [AuthenticatedSessionController::class, 'store']);
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
      ->name('logout');
 
-Route::get('/tarifas/create', [TarifasController::class, 'create'])->name('tarifas.create');
-Route::get('/', function () {
-    return view('welcome');
-});
 
 
 Route::get('/dashboard', function () {
@@ -40,9 +36,14 @@ Route::get('/nosotros', function () {
 })->name('nosotros');
 
 
-Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])
-->resource('tarifas',TarifasController::class)
-->names('tarifas');
+Route::resource('tarifas', TarifaController::class)
+        ->names('tarifas')
+        ->parameters(['tarifas' => 'tarifa']);
+
+Route::resource('guias', GuiaController::class)
+        ->names('guias')
+        ->parameters(['guias' => 'guia']);
+
 
 
 Route::middleware([
