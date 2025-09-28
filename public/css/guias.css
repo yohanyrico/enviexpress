@@ -1,93 +1,266 @@
-/* === public/css/guias.css === */
+/* ======================================= */
+/* === Estilos Generales y Centrado (Consulta Box) === */
+/* ======================================= */
 
-/* Fondo general */
 body {
-    margin: 0;
-    min-height: 100vh;
-    background: radial-gradient(circle at center, #0f5132 0%, #063d24 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background-color: #04440c; /* Fondo ligero para la página */
+    padding-top: 50px; /* Margen superior para evitar que se pegue al borde */
 }
 
-/* Caja principal */
 .consulta-box {
-    background: #ffffff;
-    border-radius: 16px;
-    padding: 2.5rem 2rem;
-    max-width: 420px;
-    width: 90%;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    text-align: center;
+    /* Estilo clave para centrar el bloque horizontalmente */
+    max-width: 600px; /* Ancho máximo del formulario (ajustable) */
+    margin: 0 auto; /* Centra el bloque horizontalmente */
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(248, 121, 2, 0.979);
+    text-align: center; /* Centra la imagen y el texto */
+    font-family: Arial, sans-serif;
 }
 
-/* Título y texto */
 .consulta-box h2 {
     color: #198754;
     font-size: 1.9rem;
     margin-bottom: 0.75rem;
 }
-.consulta-box p {
-    color: #374151;
-    font-size: 0.95rem;
-    margin-bottom: 1.5rem;
+/* Ajustes para elementos dentro del formulario */
+.form-group {
+    text-align: left; /* Alinea el texto de la etiqueta a la izquierda */
+    margin-bottom: 15px;
 }
 
-/* Formulario */
-.form-group {
-    text-align: left;
-    margin-bottom: 1.2rem;
-}
-.form-group label {
-    display: block;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: #111827;
-}
 .form-control {
     width: 100%;
-    padding: 0.75rem 1rem;
-    border: 1px solid #d1d5db;
-    border-radius: 8px;
-    font-size: 1rem;
-    outline: none;
-    transition: border-color 0.2s;
-}
-.form-control:focus {
-    border-color: #198754;
-    box-shadow: 0 0 0 2px rgba(25,135,84,0.25);
+    padding: 10px;
+    box-sizing: border-box; 
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
-/* Botón */
 .btn {
-    background: #e27b04;
-    color: #ffffff;
-    width: 100%;
-    padding: 0.9rem;
+    padding: 10px 20px;
+    background-color: #b35b13;
+    color: white;
     border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: 600;
+    border-radius: 4px;
     cursor: pointer;
-    transition: background 0.3s;
-}
-.btn:hover {
-    background: #fc8f00;
+    font-size: 1rem;
+    transition: background-color 0.3s;
 }
 
-/* Resultado de la guía */
-#trackResult {
-    display: none;
-    margin-top: 2rem;
-    padding: 1.5rem;
-    background: rgba(25,135,84,0.1);
-    border-left: 4px solid #198754;
-    border-radius: 12px;
-    text-align: left;
+.btn:hover {
+    background-color: #f09846;
 }
-#trackResult h3 {
-    color: #198754;
-    margin-top: 0;
-    margin-bottom: 1rem;
+
+
+/* ======================================= */
+/* === Variables y Estilos de Seguimiento (Tracking) === */
+/* ======================================= */
+
+:root {
+    --color-primary: #022f83; /* Azul oscuro */
+    --color-delivered: #4CAF50; /* Verde */
+    --color-button: #079cf1; /* Naranja */
+    --color-text-light: #666; /* Gris para etiquetas y fechas */
+    --color-background: #f4f6f8; /* Gris claro para el fondo */
+    --color-border: #ddd;
+}
+
+.tracking-container {
+    max-width: 900px; 
+    margin: 20px auto; /* Centra el contenedor de seguimiento */
+    padding: 20px 20px 0;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative; 
+    text-align: left; /* Asegura que el contenido interno no esté centrado */
+}
+
+/* Estilos del botón de cierre 'X' */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-text-light);
+    cursor: pointer;
+    line-height: 1;
+    padding: 5px 10px;
+    transition: color 0.2s;
+    z-index: 10;
+}
+
+.close-btn:hover {
+    color: var(--color-button);
+}
+
+/* --- Estilos de Cabecera y Datos Principales --- */
+.header-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 20px;
+}
+
+.info-item {
+    flex: 1;
+    padding-right: 20px;
+    border-right: 1px solid var(--color-border);
+}
+
+.info-item:last-child {
+    border-right: none;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.label {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+}
+
+.data-tracking {
+    margin: 5px 0 0;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.data-status {
+    margin: 5px 0 0;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--color-primary);
+}
+
+.btn-digital-guide {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--color-button);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.link-delivery-time {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+/* --- Estilos de Origen y Destino --- */
+.separator {
+    border: 0;
+    height: 1px;
+    background-color: var(--color-border);
+    margin: 0;
+}
+
+.location-info {
+    display: flex;
+    padding: 15px 0;
+    background-color: var(--color-background); 
+}
+
+.location-item {
+    flex: 1;
+    padding: 0 20px;
+}
+.location-item p {
+    margin: 0;
+    padding-left: 5px;
+}
+.location-item .data-location {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    margin-top: 2px;
+}
+
+/* --- Estilos de Línea de Tiempo --- */
+.timeline {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    padding: 40px 10px 10px;
+    background-color: var(--color-background); 
+    border-radius: 0 0 8px 8px; 
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 55px;
+    left: 10%;
+    right: 10%;
+    height: 4px;
+    background-color: var(--color-border);
+    z-index: 1;
+}
+
+.timeline-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    width: 20%;
+    z-index: 2; 
+}
+
+.icon-circle {
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border: 4px solid var(--color-border); 
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: bold;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 3;
+}
+
+.icon-circle.active {
+    border-color: var(--color-primary);
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
+.icon-circle.delivered {
+    border-color: var(--color-delivered);
+    background-color: var(--color-delivered);
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.date {
+    font-size: 0.8rem;
+    color: var(--color-text-light);
+    margin: 5px 0 0;
+}
+
+.status-label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    margin: 5px 0 0;
 }

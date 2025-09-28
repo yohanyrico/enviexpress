@@ -20,12 +20,9 @@
         <h2 class="text-3xl font-extrabold text-center mb-10">Sobre Nosotros</h2>
         <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
 
-    {{-- =================================================================== --}}
-    {{-- BLOQUE PRINCIPAL: INTRODUCCIÓN Y EXPERIENCIA --}}
-    {{-- =================================================================== --}}
     <div class="max-w-7xl mx-auto text-center mb-12">
         <h2 class="text-3xl sm:text-4xl font-extrabold text-green-700 mb-4">
-            Más de una Década de Confianza en Mensajería y Logística en Bogotá
+            Tu Confianza en Mensajería y Logística Bogotana.
         </h2>
         <p class="text-lg text-gray-600 max-w-4xl mx-auto">
             En el dinámico corazón de Bogotá, nos hemos consolidado como el ALIADO LOGISTICO DE CONFINZA para empresas y particulares de la mensajería y la paquetería, no solo entregamos paquetes y documentos, garantizamos tranquilidad. Nuestro historial de servicio impecable y nuestra profunda comprensión de la geografía bogotana nos permiten ofrecer un nivel de ENTREGAS RAPIDAS Y SEGURAS que nos diferencia.
@@ -52,11 +49,10 @@
                 <h4 class="text-xl font-bold text-gray-900 pt-1">1. Mensajería Express: Velocidad que Transforma su Operación</h4>
             </div>
             <p class="text-gray-700 mt-4">
-                Sabemos que en el mundo de los negocios, el tiempo es un activo invaluable. Por eso, nos especializamos en **Entregas Rápidas en menos de 2 horas en toda Bogotá**.
+                Sabemos que en el mundo de los negocios, el tiempo es un activo invaluable. Por eso, nos especializamos en **Entregas Rápidas el Mismo Día en Toda Bogotá**.
             </p>
             <ul class="list-disc list-inside mt-3 text-sm text-gray-600 space-y-1">
                 <li>Implementamos **seguimiento en tiempo real (GPS)** para la ubicación exacta.</li>
-                <li>Reciba **notificaciones instantáneas** sobre la recogida, el tránsito y la entrega.</li>
             </ul>
         </div>
 
@@ -97,7 +93,7 @@
 
     <div class="max-w-7xl mx-auto text-center mt-12 pt-8 border-t border-gray-200">
         <p class="text-lg text-gray-600">
-            Con más de una década siendo los líderes en logística exprés en Bogotá, estamos listos para ser el socio que su empresa necesita. Confíe en nuestra experiencia, nuestra flota y nuestra tecnología para llevar su paquetería y mensajería al siguiente nivel.
+            Siendo los líderes en logística expréss en Bogotá, estamos listos para ser el socio que su empresa necesita. Confíe en nuestra experiencia, nuestra flota y nuestra tecnología para llevar su paquetería y mensajería al siguiente nivel.
         </p>
         {{-- Botón de Ejemplo para Contacto --}}
                  <a href="{{ route('register') }}" 

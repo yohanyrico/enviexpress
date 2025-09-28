@@ -2,7 +2,7 @@
 namespace App\Http\Controllers\Envios;
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Tarifas\TarifasController;
+use App\Http\Controllers\Tarifa\TarifaController;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Envios\EnvioController;
