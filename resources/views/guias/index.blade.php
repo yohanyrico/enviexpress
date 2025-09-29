@@ -29,6 +29,7 @@
                     <thead class="bg-gray-100 text-gray-700">
                         <tr>
                             <th class="px-3 py-2 border">Número Guía</th>
+                            <th class="px-3 py-2 border">ID Guía</th>
                             <th class="px-3 py-2 border">Tipo Servicio</th>
                             <th class="px-3 py-2 border">Remitente</th>
                             <th class="px-3 py-2 border">Destinatario</th>
@@ -44,6 +45,7 @@
                         @foreach($guias as $guia)
                             <tr class="border-t">
                                 <td class="px-3 py-2">{{ $guia->numero_guia }}</td>
+                                <td class="px-3 py-2">{{ $guia->id_guia }}</td>
                                 <td class="px-3 py-2">{{ $guia->tipo_servicio }}</td>
                                 <td class="px-3 py-2">
                                     {{ $guia->remitente->nombres ?? '-' }}
