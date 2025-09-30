@@ -18,13 +18,13 @@
                     <div class="p-6 bg-gray-100 rounded-lg shadow hover:shadow-lg transition">
                         <h2 class="text-xl font-semibold text-green-500 mb-2">📦 Mis Pedidos</h2>
                         <p class="text-gray-600">Consulta el historial de tus entregas y el estado actual de tus paquetes.</p>
-                        <a href="{{ route('envios.index') }}" class="text-green-600 font-medium mt-2 inline-block">Ver más →</a>
+                        <a href="{{ route('pedidos.index') }}" class="text-green-600 font-medium mt-2 inline-block">Ver más →</a>
                     </div>
 
                     <div class="p-6 bg-gray-100 rounded-lg shadow hover:shadow-lg transition">
                         <h2 class="text-xl font-semibold text-green-500 mb-2">🚀 Nuevo Pedido</h2>
                         <p class="text-gray-600">Solicita una nueva entrega rápida y segura en pocos pasos.</p>
-                        <a href="{{ route('envios.create') }}" class="text-green-600 font-medium mt-2 inline-block">Solicitar →</a>
+                        <a href="{{ route('pedidos.create') }}" class="text-green-600 font-medium mt-2 inline-block">Solicitar →</a>
                     </div>
 
                     <div class="p-6 bg-gray-100 rounded-lg shadow hover:shadow-lg transition">
