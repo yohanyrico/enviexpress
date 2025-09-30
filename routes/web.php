@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Envios\EnvioController;
 use App\Http\Controllers\Guia\GuiaController;
+use App\Http\Controllers\Pedidos\PedidoController;
 use App\Http\Controllers\Seguimiento\SeguimientoController;
 
 Route::post('/registro', function (Request $request) {
@@ -52,6 +53,12 @@ Route::resource('guias', GuiaController::class)
 Route::resource('seguimientos', SeguimientoController::class)
     ->names('seguimientos')
     ->parameters(['seguimientos' => 'seguimiento']);
+
+
+Route::resource('pedidos', PedidoController::class)
+    ->names('pedidos')
+    ->parameters(['pedidos' => 'pedido']);
+
 
 Route::middleware([
     'auth:sanctum',

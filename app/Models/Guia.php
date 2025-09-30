@@ -55,10 +55,10 @@ class Guia extends Model
         return $this->hasMany(Mensajerium::class, 'id_guia');
     }
 
-    public function pedidos()
-    {
-        return $this->hasMany(Pedido::class, 'id_guia');
-    }
+public function pedidos()
+	{
+		return $this->hasMany(Pedido::class, 'id_guia');
+	}
 
     public function seguimientos()
     {
