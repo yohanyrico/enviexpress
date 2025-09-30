@@ -73,7 +73,6 @@ class PedidoController extends Controller
     public function update(UpdatePedidoRequest $request, Pedido $pedido)
     {
         $pedido->update($request->validated());
-
         return redirect()->route('pedidos.index')
             ->with('ok', 'El pedido fue actualizado correctamente.');
     }
